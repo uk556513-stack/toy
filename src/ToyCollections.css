@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. SCROLLBAR HIDE FIX: html & body overflow lock */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #a8cae0;
+  font-family: 'Poppins', sans-serif;
+  color: #0d0d0d;
+}
+
+.app-viewport {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.pill-btn {
+  background-color: #0f1416;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-badge {
+  background-color: #ffffff;
+  color: #0f1416;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cart-popover {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 270px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  z-index: 200;
+}
+
+.empty-cart-text {
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #1a202c;
+}
+
+.total-row {
+  border-top: 1px solid #edf2f7;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.clear-cart-btn {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #0f1416;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.screen-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.subtitle-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #0f1416;
+  margin-bottom: 24px;
+}
+
+.primary-dark-btn {
+  background-color: #0f1416;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* PAGE 2: SIDE-BY-SIDE SPLIT LAYOUT */
+.stack-content {
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-container-split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.swiper-wrapper-box {
+  width: 250px;
+  height: 320px;
+}
+
+.stack-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.stack-card-slide {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  background-color: #ffffff;
+}
+
+.stack-card-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  background-color: #ffffff; 
+}
+
+.watch-meta-info-side {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 220px;
+}
+
+.watch-title-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 38px;
+  font-weight: 600;
+  color: #0f1416;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.watch-price {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a202c;
+}
+
+.slide-counter {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #4a5568;
+}
+
+/* PAGE 3: 3D FAN SPREAD */
+.carousel-content {
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.carousel-header-box {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.collections-stage {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.collection-card-item {
+  position: absolute;
+  width: 135px;
+  height: 250px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.collection-card-item:hover {
+  z-index: 100 !important;
+}
+
+.collection-card-item:hover .card-inner {
+  transform: scale(1.1) translateY(-15px) translateZ(30px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 2. TEXT CONTRAST FIX: Dark overlay at bottom */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-inner img {
+  width: 100%;
+  height: 78%;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 20, 22, 0.92); /* Dark overlay */
+  color: #ffffff; /* Sharp white text */
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 6px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}

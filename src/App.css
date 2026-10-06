@@ -1,0 +1,1419 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+  --bg: #9ec5ce;
+  --text: #1d2b31;
+  --card: #f2f3f3;
+  --tile: rgba(220, 238, 242, 0.55);
+  --dark: #17191c;
+}
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden !important;
+
+  background: var(--bg);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+
+  font-family: "Inter", system-ui, sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+
+  overflow: hidden !important;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+
+  background: var(--bg);
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   MAIN STAGE
+========================================================= */
+
+.stage {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg);
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  z-index: 30;
+
+  overflow: hidden;
+}
+
+.intro-kicker {
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  opacity: 0.6;
+
+  text-align: center;
+}
+
+.intro-deck {
+  position: relative;
+
+  width: clamp(200px, 24vw, 300px);
+
+  aspect-ratio: 3 / 4;
+
+  flex-shrink: 0;
+}
+
+.intro-ghost,
+.intro-card {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 16px;
+
+  background: var(--card);
+
+  box-shadow:
+    0 20px 45px rgba(15, 40, 50, 0.22);
+}
+
+.intro-ghost.g1 {
+  transform: translate(10px, 6px) rotate(2deg);
+
+  background: #e6eaeb;
+}
+
+.intro-ghost.g2 {
+  transform: translate(20px, 12px) rotate(4deg);
+
+  background: #dadfe1;
+}
+
+.intro-card {
+  overflow: hidden;
+}
+
+.intro-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 12%;
+
+  display: block;
+}
+
+.intro-caption {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 40px 12px 14px;
+
+  text-align: center;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0.78)
+    );
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.intro-caption span {
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  text-transform: uppercase;
+
+  font-size: 18px;
+
+  letter-spacing: 0.5px;
+}
+
+.intro-caption small {
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.intro-dots {
+  display: flex;
+
+  gap: 6px;
+}
+
+.intro-dots i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 99px;
+
+  background: rgba(23, 25, 28, 0.25);
+
+  transition: all 0.25s;
+}
+
+.intro-dots i.on {
+  width: 20px;
+
+  background: var(--dark);
+}
+
+/* =========================================================
+   SPREAD WRAPPER
+========================================================= */
+
+.spread-wrap {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100vw;
+
+  overflow: hidden !important;
+}
+
+.spread {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100vw;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   SPREAD HEADER
+========================================================= */
+
+.spread-header {
+  width: 100%;
+
+  text-align: center;
+
+  padding-top: 35px;
+  padding-bottom: 10px;
+
+  z-index: 10;
+
+  flex-shrink: 0;
+}
+
+.spread-sub {
+  font-size: 15px;
+
+  font-weight: 400;
+
+  color: var(--text);
+
+  letter-spacing: -0.2px;
+
+  margin: 0;
+
+  line-height: 1.2;
+}
+
+.spread-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  font-size: clamp(42px, 6vw, 78px);
+
+  font-weight: 400;
+
+  color: var(--text);
+
+  letter-spacing: -1px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  margin: 0;
+
+  max-width: 100%;
+}
+
+/* =========================================================
+   PRODUCT ROW
+========================================================= */
+
+.row {
+  position: relative;
+
+  width: 100%;
+  max-width: 100vw;
+
+  height: min(300px, 34vh);
+
+  margin-top: min(45px, 5vh);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  /*
+    Rotated cards should remain visible.
+    Parent stage handles screen overflow.
+  */
+  overflow: visible;
+}
+
+/* =========================================================
+   PRODUCT SLOT
+========================================================= */
+
+.slot {
+  position: absolute;
+
+  width: clamp(105px, 13vw, 180px);
+
+  max-width: 180px;
+
+  aspect-ratio: 3 / 4;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   PRODUCT TILE
+========================================================= */
+
+.tile {
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 14px;
+
+  background: var(--tile);
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 18px 40px rgba(20, 50, 60, 0.18);
+
+  cursor: pointer;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  display: block;
+
+  outline: none;
+
+  appearance: none;
+}
+
+.tile:focus {
+  outline: none;
+}
+
+.tile:focus-visible {
+  outline: none;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 10%;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 8px 10px rgba(0, 0, 0, 0.18)
+    );
+}
+
+/* =========================================================
+   BOTTOM HINT
+========================================================= */
+
+.spread-hint {
+  position: absolute;
+
+  left: 0;
+  bottom: 24px;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0 20px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  letter-spacing: 0.4px;
+
+  line-height: 1.4;
+
+  color: var(--text);
+
+  z-index: 20;
+}
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+.detail {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  max-width: 100vw;
+  max-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(40px, 10vw, 180px);
+
+  z-index: 40;
+
+  padding: 24px;
+
+  overflow: hidden !important;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-btn {
+  position: absolute;
+
+  top: 18px;
+  left: 20px;
+
+  background: var(--dark);
+
+  color: #fff;
+
+  border: none;
+
+  font-size: 12px;
+
+  padding: 7px 14px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  z-index: 100;
+}
+
+/* =========================================================
+   PRODUCT STACK
+========================================================= */
+
+.stack {
+  position: relative;
+
+  width: clamp(240px, 30vw, 420px);
+
+  max-width: 42vw;
+
+  aspect-ratio: 3 / 4;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+}
+
+/* =========================================================
+   STACK CARD
+========================================================= */
+
+.stack-card {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+
+  background: var(--card);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 24px 50px rgba(15, 40, 50, 0.25);
+}
+
+.stack-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 10%;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  display: block;
+}
+
+.stack-card.back {
+  cursor: pointer;
+}
+
+.stack-card.back.b1 {
+  background: #eceeef;
+}
+
+.stack-card.back.b2 {
+  background: #e3e6e8;
+}
+
+.stack-card.back img {
+  opacity: 0.35;
+}
+
+.stack-card.front {
+  z-index: 3;
+
+  cursor: grab;
+}
+
+.stack-card.front:active {
+  cursor: grabbing;
+}
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.info {
+  min-width: 240px;
+
+  max-width: 100%;
+}
+
+.info-inner {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  text-align: center;
+}
+
+.product-name {
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  font-size: clamp(26px, 3.4vw, 46px);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1;
+}
+
+.product-price {
+  font-size: clamp(16px, 1.6vw, 22px);
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   CART BUTTON
+========================================================= */
+
+.cart-btn {
+  margin-top: 10px;
+
+  min-width: 230px;
+
+  background: var(--dark);
+
+  color: #fff;
+
+  border: none;
+
+  padding: 11px 26px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cart-btn.added {
+  letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   CART BADGE
+========================================================= */
+
+.cart-badge {
+  position: absolute;
+
+  top: 18px;
+  right: 20px;
+
+  background: var(--dark);
+
+  color: #fff;
+
+  font-size: 12px;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  z-index: 100;
+}
+
+/* =========================================================
+   NO HORIZONTAL OVERFLOW
+========================================================= */
+
+html,
+body,
+#root,
+.stage,
+.spread-wrap,
+.spread,
+.detail {
+  max-width: 100vw;
+
+  overflow-x: hidden !important;
+}
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .spread-header {
+    padding-top: 30px;
+  }
+
+  .row {
+    height: min(280px, 32vh);
+
+    margin-top: 30px;
+  }
+
+  .slot {
+    width: clamp(100px, 12vw, 165px);
+
+    max-width: 165px;
+  }
+
+  .detail {
+    gap: 45px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .spread-header {
+    padding-top: 28px;
+
+    padding-bottom: 5px;
+  }
+
+  .spread-title {
+    font-size: clamp(38px, 8vw, 65px);
+  }
+
+  .row {
+    height: 250px;
+
+    margin-top: 25px;
+  }
+
+  .slot {
+    width: 13vw;
+
+    max-width: 145px;
+  }
+
+  .detail {
+    gap: 35px;
+
+    padding: 20px;
+  }
+
+  .stack {
+    width: 38vw;
+
+    max-width: 330px;
+  }
+
+  .info {
+    min-width: 200px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden !important;
+  }
+
+  .stage {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden !important;
+  }
+
+  .spread {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden !important;
+  }
+
+  .spread-header {
+    padding-top: 25px;
+
+    padding-bottom: 5px;
+  }
+
+  .spread-sub {
+    font-size: 13px;
+  }
+
+  .spread-title {
+    font-size: clamp(34px, 11vw, 55px);
+  }
+
+  .row {
+    width: 100%;
+
+    height: 220px;
+
+    margin-top: 20px;
+
+    overflow: visible;
+  }
+
+  .slot {
+    width: 24vw;
+
+    max-width: 125px;
+  }
+
+  .spread-hint {
+    left: 0;
+    bottom: 18px;
+
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 11px;
+
+    text-align: center;
+  }
+
+  /* DETAIL MOBILE */
+
+  .detail {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 28px;
+
+    padding: 55px 20px 20px;
+
+    overflow: hidden !important;
+  }
+
+  .stack {
+    width: 62vw;
+
+    max-width: 300px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+  }
+
+  .info {
+    min-width: 0;
+
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .product-name {
+    font-size: 32px;
+  }
+
+  .cart-btn {
+    min-width: 210px;
+  }
+
+  .back-btn {
+    top: 15px;
+
+    left: 15px;
+  }
+
+  .cart-badge {
+    top: 15px;
+
+    right: 15px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .spread-header {
+    padding-top: 20px;
+  }
+
+  .spread-sub {
+    font-size: 12px;
+  }
+
+  .spread-title {
+    font-size: 36px;
+  }
+
+  .row {
+    height: 190px;
+
+    margin-top: 15px;
+  }
+
+  .slot {
+    width: 24vw;
+
+    max-width: 110px;
+  }
+
+  .spread-hint {
+    bottom: 14px;
+
+    font-size: 10px;
+  }
+
+  .detail {
+    gap: 22px;
+
+    padding: 55px 15px 15px;
+  }
+
+  .stack {
+    width: 65vw;
+
+    max-width: 280px;
+  }
+
+  .product-name {
+    font-size: 28px;
+  }
+
+  .product-price {
+    font-size: 17px;
+  }
+
+  .cart-btn {
+    min-width: 190px;
+
+    padding: 10px 20px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .spread-title {
+    font-size: 32px;
+  }
+
+  .row {
+    height: 175px;
+  }
+
+  .slot {
+    width: 23vw;
+
+    max-width: 90px;
+  }
+
+  .stack {
+    width: 68vw;
+
+    max-width: 260px;
+  }
+}
+/* ================================
+   DETAIL PAGE ONLY
+================================ */
+
+.detail {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(50px, 9vw, 150px);
+
+  padding: 70px 50px 40px;
+
+  background: var(--bg);
+
+  overflow: hidden;
+
+  z-index: 40;
+}
+
+
+/* BACK BUTTON */
+
+.back-btn {
+  position: absolute;
+
+  top: 18px;
+  left: 20px;
+
+  background: var(--dark);
+  color: #fff;
+
+  border: none;
+  outline: none;
+
+  padding: 7px 14px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  z-index: 100;
+}
+
+
+/* ================================
+   PRODUCT IMAGE STACK
+================================ */
+
+.stack {
+  position: relative;
+
+  width: clamp(300px, 32vw, 440px);
+
+  aspect-ratio: 3 / 4;
+
+  flex-shrink: 0;
+
+  overflow: visible;
+}
+
+
+/* MAIN IMAGE CARD */
+
+.stack-card {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+
+  background: #f2f3f3;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 24px 50px rgba(15, 40, 50, 0.25);
+}
+
+
+/* PRODUCT IMAGE */
+
+.stack-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 8%;
+
+  display: block;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* BACK CARDS */
+
+.stack-card.back {
+  cursor: pointer;
+}
+
+.stack-card.back.b1 {
+  background: #eceeef;
+}
+
+.stack-card.back.b2 {
+  background: #e3e6e8;
+}
+
+.stack-card.back img {
+  opacity: 0.35;
+}
+
+
+/* FRONT CARD */
+
+.stack-card.front {
+  z-index: 3;
+
+  cursor: grab;
+}
+
+.stack-card.front:active {
+  cursor: grabbing;
+}
+
+
+/* ================================
+   PRODUCT INFORMATION
+================================ */
+
+.info {
+  min-width: 300px;
+
+  max-width: 500px;
+
+  flex-shrink: 0;
+}
+
+.info-inner {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  gap: 10px;
+}
+
+
+/* PRODUCT NAME */
+
+.product-name {
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  font-size: clamp(30px, 3.5vw, 48px);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  line-height: 1.1;
+
+  color: #f2f2f2;
+}
+
+
+/* PRICE */
+
+.product-price {
+  font-size: clamp(17px, 1.7vw, 23px);
+
+  font-weight: 700;
+
+  color: #111b20;
+}
+
+
+/* ADD TO CART */
+
+.cart-btn {
+  margin-top: 8px;
+
+  min-width: 230px;
+
+  background: var(--dark);
+
+  color: #fff;
+
+  border: none;
+
+  outline: none;
+
+  padding: 11px 26px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.cart-btn.added {
+  letter-spacing: 0.3px;
+}
+
+
+/* ================================
+   CART BADGE
+================================ */
+
+.cart-badge {
+  position: fixed;
+
+  top: 18px;
+  right: 20px;
+
+  background: var(--dark);
+
+  color: #fff;
+
+  font-size: 12px;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  z-index: 200;
+}
+
+
+/* ================================
+   LAPTOP
+================================ */
+
+@media (max-width: 1100px) {
+
+  .detail {
+    gap: 60px;
+
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .stack {
+    width: 340px;
+  }
+
+  .info {
+    min-width: 250px;
+  }
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+  .detail {
+    gap: 35px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .stack {
+    width: 300px;
+  }
+
+  .product-name {
+    font-size: 32px;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 650px) {
+
+  .detail {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 65px 20px 25px;
+
+    overflow: hidden;
+  }
+
+  .stack {
+    width: min(72vw, 310px);
+
+    aspect-ratio: 3 / 4;
+  }
+
+  .info {
+    width: 100%;
+
+    min-width: 0;
+
+    max-width: 350px;
+  }
+
+  .product-name {
+    font-size: 30px;
+  }
+
+  .product-price {
+    font-size: 18px;
+  }
+
+  .cart-btn {
+    min-width: 210px;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 420px) {
+
+  .detail {
+    gap: 20px;
+
+    padding-top: 60px;
+  }
+
+  .stack {
+    width: 70vw;
+  }
+
+  .product-name {
+    font-size: 27px;
+  }
+}
